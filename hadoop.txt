@@ -1,0 +1,65 @@
+Hadoop Related OPen Source PRocjects
+	Eclipse
+	Lucene
+	Hbase
+	Hive
+	PIG
+	Spark
+	Zoo KEeper
+	Apche Ambari	
+	Avro
+	UIMA Unstructured Information Management Architecture
+--------------------------------------------------------------
+Architecture
+	Cluster
+	Racks
+	Nodes
+--------------------------------------------------------------
+Main Components
+	Distributed File System
+		HDFS
+		IBM Spectrum Scale
+	MapReduce Engine
+		Framework for performing
+		Has a built-in-resource manager and scheduler
+--------------------------------------------------------------
+HDFS File Blocks
+	Default for Hadoop is 64MB
+	Recommended is 128MB
+--------------------------------------------------------------
+Block
+	Client
+	Job Tracker
+	Data Node
+	Task Tracker
+	Namenode
+--------------------------------------------------------------
+Hadoop Configuration Files
+	hadoop-env.sh
+	core-site.xml
+	hdfs-site.xml
+	mapred-site.xml
+	masters
+	slaves tasktracker
+	hadoop-metrics.properties
+	log4j.properties
+--------------------------------------------------------------
+https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.7.6#:~:text=%20%20%201%20Step%201%3A%20Download%20and,all%20hosts%20that%20will%20be%20managed...%20More%20
+--------------------------------------------------------------
+hdfs dfsadmin -report
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

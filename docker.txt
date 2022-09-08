@@ -1,0 +1,116 @@
+docker pull <image name>
+docker run <image name>
+docker rmi <image name>
+---------------------------------------------------
+docker exec -it <conatiner number/name> /bin/bash
+docker exec -it <conatiner number/name> sh
+---------------------------------------------------
+docker ps
+docker ps -a or --all
+docker ps -f or --filter
+docker ps --format
+docker ps -n or --last
+docker ps -l or latest
+docker ps --no-trunc
+docker ps -q or quite
+docker ps -s or --size
+---------------------------------------------------
+docker start <conatiner number/name>
+docker stop  <conatiner number/name>
+---------------------------------------------------
+docker container ls
+docker container rm --force or -f
+docker container rm --link or -l
+docker container rm --volumes or -v
+---------------------------------------------------
+docker rm -f or --force
+docker rm -l or --link 
+docker rm -v or --volumes
+docker rm $(docker ps --filter status=exited -q)
+docker rm -v <imagename>
+---------------------------------------------------
+docker logs <container name>
+---------------------------------------------------
+docker-compose -f <file>.yaml up
+docker-compose -f <file>.yaml down
+---------------------------------------------------
+docker network ls
+docker network create <name>
+--net (flag for dcoker run)
+---------------------------------------------------
+/var/lib/docker/volumes
+c:\programdata\docker\volumes
+---------------------------------------------------
+docker run -p 5432:5432 -d \
+	--name pdb \
+	-e POSTGRES_USER=postgres \
+	-e POSTGRES_PASSWORD=excel \
+	-e POSTGRES_DB=postgres \
+	-v pgdata:/var/lib/postgresql/data \
+	postgres
+
+psql postgres -h localhost -U postgres
+docker exec -it <image number/name> psql -U postgres postgres /bin/bash
+curl localhost:5432/
+---------------------------------------------------
+docker run -p 3306:3306 -d \
+--name mql \
+-v /root/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=toor \
+-e MYSQL_DATABASE=repo \
+-e MYSQL_USER=alex \
+-e MYSQL_PASS=alex \
+mysql
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mql
+---------------------------------------------------
+docker run -p 6379:6379 \
+-v /root/redis/data:/data \
+--name red -d \
+--network app-tier \
+-e REDIS_USER=redis \
+-e REDIS_PASSWORD=redis \
+bitnami/redis:latest
+---------------------------------------------------
+docker run -d -p 27017:27017 --name mone \
+-e MONGO_INITDB_ROOT_USERNAME=admin \
+-e MONGO_INITDB_ROOT_PASSWORD=admin \
+-v /root/mongodb/data:/data/db
+mongo \
+--wiredTigerCacheSizeGB 1.5 \
+
+mongodb://admin:admin@192.168.126.4:27017
+---------------------------------------------------
+docker run \
+    --publish=7474:7474 --publish=7687:7687 \
+    --volume=/root/neo4j/data:/data \
+    neo4j
+
+http://192.168.126.4:7474
+user:neo4j
+pass:admin
+---------------------------------------------------
+docker run -d -p 9042:9042 --name casa \
+	-e CASSANDRA_PASSWORD_SEEDER=admin \
+     -e CASSANDRA_PASSWORD=admin \
+	-e HEAP_NEWSIZE=512M
+     -e MAX_HEAP_SIZE=2048M
+	-v /root/cassandra/data:/var/lib/cassandra \
+	cassandra
+
+7000 for cluster communication (7001 if SSL is enabled)
+9042 for native protocol clients
+7199 for JMX
+	
+docker exec -it casa bash
+---------------------------------------------------
+docker run -d -p 8080:80 --name wp \
+	-e WORDPRESS_DB_HOST=127.17.0.2 \
+	-e WORDPRESS_DB_USER=root \
+	-e WORDPRESS_DB_PASSWORD=toor \
+	-e WORDPRESS_DB_NAME=wp \
+	-e WORDPRESS_TABLE_PREFIX=wp \
+	wordpress
+---------------------------------------------------
+Each SQL Server instance has an administrator account; by default, the user name for this account is sa
+

@@ -1,0 +1,112 @@
+postgresql-14.2.0-4-debian-10-x86_64
+
+Step 1:
+DOWNLOAD VM IMAGE
+
+Step 2:
+IMPORT VM ON YOUR FAVORITE VMbi APPLICATION
+
+Step 3:
+BOOT VM AND NOTE DOWN THE APPLICATION CREDENTIALS
+	A. Note down access credentials
+	B. skip the password change or set a new password
+	IP: 192.168.43.16
+	USER: postgres
+	PASSWORD: nxEN4S8Xw6Yu
+
+Step 4:
+INSTALL NANO TEXT EDITOR
+	A. Update the repository
+		:# sudo apt-get update
+	B. Install the appli  cation
+		:# sudo apt install nano
+
+Step 5:
+EDIT SSH CONFIGURATION FILE
+		:# sudo nano /etc/ssh/sshd_config
+	A. Change the Ro ot acces permit
+		PermitRootLogin yes
+	B. Disable SSL key authentication
+		PubkeyAuthenticati    on no
+	C. Enable password authentication
+		PasswordAuthentication yes
+	D: Save and Exit the text editor
+
+Step 6: 
+ENABLE SSH
+	A. Run the following commands
+		:# sudo rm -f /etc/ssh/sshd_not_to_be_run
+		:# sudo systemctl enable ssh
+		:# sudo systemctl start ssh
+		:# sudo systemctl status ssh
+
+Step 7:
+CONNECT AND WORK FROM HOST OS
+	:\> ssh bitnami@192.168.1.102
+
+Step 8:
+ENABLE THE ROOT USER 
+	A. Run the following commands
+		:# sudo passwd root
+		:# logout
+
+Step 9:
+LOGIN AS ROOT USER
+	:\> ssh root@192.168.1.102
+
+Step 10:
+OPENING THE PORT AND PROTOCOL IN FIREWALL
+	A. Run the following commands
+		:# sudo ufw allow 5432
+		:# sudo ufw allow postgres
+		:# sudo ufw allow postgres/tcp
+
+Step 11:
+USING WINSCP APPLICATION FOR FILE BROWSING
+
+Step 12:
+MODIFYING THE PG_HBA.CONF FILE
+/opt/bitnami/postgresql/conf/pg_hba.conf
+	A. Add the below line on the file
+		host all all all md5
+
+MODIFYING THE POSTGRESQL.CONF FILE
+/opt/bitnami/postgresql/conf/postgresql.conf
+	A. Edit the below line on the file as follows.
+		listen_addresses = '*'
+
+Step 14:
+RESTART THE POSTGRESQL SERVER
+	A. Run the following command
+		:# sudo /opt/bitnami/ctlscript.sh restart postgresql
+
+
+Step 15:
+CONNECT THE SERVICE FROM HOST OS
+	connect from comamndline
+		:# psql -h 192.168.1.102 -U postgres -p 5432
+	connect to PGAdmin
+	connect to DataGrip
+WaoahgmMKkO9
+
+
+https://bitnami.com/stacks/database
+https://docs.bitnami.com/virtual-machine/faq/
+https://bitnami.com/stack/postgresql/virtual-machine
+https://docs.bitnami.com/virtual-machine/infrastructure/postgresql/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

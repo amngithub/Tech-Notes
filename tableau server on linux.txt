@@ -1,0 +1,143 @@
+Bare Minimum
+4 CPU cores 16 GB
+Recommended On Premise
+8 CPU Cores - 32 GB - 3GB HDD Installation  - >50GB Data
+Recommended On Cloud
+16 vCPU Cores 32 GB - 3GB HDD Installation  - >50GB Data
+-------------------------------------------------------------
+CPU Cores
+	Physical (On premise)
+	vCPU - Hyperthreads (cloud)
+-------------------------------------------------------------
+Upgrade
+-------------------------------------------------------------
+Fonts
+	There will be missing fonts
+-------------------------------------------------------------
+Installation flow
+	Install package - linux native package
+	Intilize TSM - bash script run as root
+	Initialize Server - usinf TSM CLI
+-------------------------------------------------------------
+Linux based distros
+	RHEL based RPM
+	Debian Based deb
+-------------------------------------------------------------
+Linux
+	RHEL 7.3+ ()
+		Cent Os 7.3+
+		Oracle Linux 7.3+
+		Amazon Linux 2
+	Debian 9.0+ ()
+		Ubuntu 16.0+
+-------------------------------------------------------------
+RHEL
+	sudo yum install tableau-server-2019-3-0_.rpm
+	sudo rpm -i --prefix /root/tableau/server tab.rpm (custom location installation only for RHEL distros)
+Debian
+	sudo gdebi -n ableau-server.....deb
+	not (apt-get)
+-------------------------------------------------------------
+Installation Directory
+	/opt/tableau/tableau_server
+	Everything owned by root, read-only
+-------------------------------------------------------------
+Layouts
+	Manifests
+	Packages
+-------------------------------------------------------------
+Tabdmin is not supported in Linux
+-------------------------------------------------------------
+TSM - Tableau Services Manager (A REST client)
+	TSM CLI
+	TSM Web UI
+	Custom REST Automation
+		TSM Process
+			REST API Controller
+			Co-ordination Service (Zoo Keeper)
+			Agent
+				Application Process(systemd)
+					Backgrounder
+					Gateway
+					Repository
+					Data engine
+					VizQl Server
+					File Store
+					Application Server
+					Data server				
+			Licensing Service
+			Client File Service
+	TSM Maintance Process
+		Backup/Restore
+		DB Maintance
+		Site import/export
+-------------------------------------------------------------
+TSM Security Model
+	Tableau Server w/o privileges
+		Everything runs as unprviliged user
+		Default username: tableau
+	Certain actions require privilege
+		Installing and Intializing
+		Upgrading
+	Fies owned by unpriv users group
+		TSm admins added as convenience
+		Default name : tableau
+	User and Group names are configurable
+-------------------------------------------------------------
+TSm Access Control
+	TSM delegates access control to uderlying OS
+		On linux PAM(pluggable authentication module)
+	Authentication by username and password
+	Authorization by group membership
+-------------------------------------------------------------
+Initialize TSM as root (one time operation)
+	sudo /op/tableau/tableau_server/packages/scripts.20193.19.0913.2225/initialize-tsm --accepteula
+-------------------------------------------------------------
+Adding worker nodes
+	Install tableau as usual
+	Copy bootstrap file from controller node
+		tsm topplogy nodes get-bootstrap-file --file bootstrap.json
+		sudo ./intialize-tsm --accepteula -b bootstrap.json -u alex
+-------------------------------------------------------------
+	sudo yum update
+
+	sudo yum install tableau-server-<version>.x86_64.rpm
+
+	cd /opt/tableau/tableau_server/packages/scripts.<version_code>/
+
+	sudo ./initialize-tsm --accepteula --activation-service
+
+	sudo hostnamectl set-hostname tableau.localdomain
+
+	tsm licenses activate --trial
+
+	tsm register --file reg_templ.json
+
+	tsm settings import -f config.json
+
+	tsm pending-changes list
+
+	tsm intialize --start-server
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

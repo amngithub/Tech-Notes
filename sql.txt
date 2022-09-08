@@ -1,0 +1,111 @@
+Subsets of SQL
+	DDL - Data Definition language
+	DML - Data Manipulation langauge
+	DQL - Data Query Langauge
+	DCL - Data Control Language
+	TCL - Transaction Control Langauge
+------------------------------------------------------------
+DDL 
+	CREATE
+	ALTER
+	DROP
+	TRUNCATE
+	--
+DML
+	SELECT
+	INSERT
+	UPDATE
+	DELETE
+DQL
+	SELECT	
+DCL 
+	GRANT
+	REVOKE
+TCL
+	COMMIT
+	ROLLBACK
+------------------------------------------------------------
+CREATE TABLE <Tablename> (column_name1 datatype(size), column_name2 datatype(size), column_name3 datatype(size));
+DROP TABLE table_name; 
+ALTER TABLE table_name ADD (column_name datatype(size));
+ALTER TABLE table_name ADD primary key (column_name);
+TRUNCATE TABLE <Tablename>;
+--Comment
+INSERT INTO <Tablename> (column1, column2, column3) VALUES (value1, value2, value3);
+DELETE FROM <Tablename> WHERE <CONDITION>;
+SELECT FROM <Tablename> WHERE <CONDITION>;
+------------------------------------------------------------
+DATA TYPES
+	INT, TINYINT, BIGINT, FLOAT, REAL
+	DATE, TIME, DATETIME
+	CHAR, VARCHAR
+	BINARY, VARBINARY
+	CLOB - Character Large Object
+	BLOB - Binary Large Object
+------------------------------------------------------------
+Integrity Constraints
+	KEY
+	DOMAIN
+	REFRENTIAL INTEGRITY
+------------------------------------------------------------
+Database Structure
+	Table
+	Fields
+	Column value/ Unit of Data
+	Records
+	Data Types
+	Logical database structure
+	Physical database structure
+------------------------------------------------------------
+Keys
+	Candidate Key
+	Composite Key
+	Primary Key
+	Alternate Key / Secondary Key
+	Foreign Key
+------------------------------------------------------------
+Natural Numbers - Common counting numbers.
+Prime Number - A natural number greater than 1 which has only 1 and itself as factors.
+Composite Number - A natural number greater than 1 which has more factors than 1 and itself.
+Whole Numbers - The set of Natural Numbers with the number 0 adjoined.
+Integers - Whole Numbers with their opposites (negative numbers) adjoined.
+Rational Numbers - All numbers which can be written as fractions.
+Irrational Numbers - All numbers which cannot be written as fractions.
+Real Numbers - The set of Rational Numbers with the set of Irrational Numbers adjoined.
+Complex Number 
+------------------------------------------------------------
+Copying data from table to table
+	INSERT INTO <target tablename> (coulmn names) SELECT <tablename> (coulmn names) FROM <source tablename>
+------------------------------------------------------------
+Logical operators
+	All
+	And
+	Any
+	Between
+	Exists
+	In
+	Like
+	Not
+	Or
+	Is Null
+	Unique
+------------------------------------------------------------
+Data Normalzation
+	First Normal (1NF)
+	Second Normal	(2NF)
+	Third Normal (3NF)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+Node - Worker Nodes
+Ingress - IP
+ConfigMap
+
+
+-------------------------------------------------------
+Pod
+Service - IP
+
+
+
+-------------------------------------------------------
+Container
+
+
+
+-------------------------------------------------------
+Volumes
+local or remote
+
+
+-------------------------------------------------------
+Kubelet
+Kubeproxy
+
+
+-------------------------------------------------------
+Master Process - Master 1
+API Server
+Scheduler
+Controller Manager
+etcd
+-------------------------------------------------------
+Basic Cluster
+2 Master nodes
+3 Worker nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

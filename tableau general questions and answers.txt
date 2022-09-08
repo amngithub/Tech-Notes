@@ -1,0 +1,30 @@
+What areas of Tableau interest you?
+
+Dashboard Creation
+Analytics
+Calculations
+Maps
+Connectors
+Data Prep
+Server Administration
+Licensing
+Mobile
+
+
+Which of the following describes how you use (or support) Tableau products? (select all that apply)
+
+I use vizzes or dashboards that others have created.
+I create vizzes or dashboards to ask and answer questions about data.
+I create vizzes or dashboards and share them for others to use.
+I prepare data for myself or others to use in their analysis.
+I am a server or site administrator for Tableau or Tableau Online.
+I make or influence purchasing decisions about BI tools.
+
+
+Which type of Tableau Software do you use?
+
+Tableau Desktop
+Tableau Server
+Tableau Online
+Tableau Public
+Tableau Mobile

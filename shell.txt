@@ -1,0 +1,80 @@
+Print the current shell name 
+	echo $0
+----------------------------------------------
+Print the list of all shells
+	cat /etc/shells
+----------------------------------------------
+Changing shell
+	sh
+	bash
+	tcsh
+	csh
+----------------------------------------------
+Exit shell
+	exit
+----------------------------------------------
+Rename or Move file
+	mv
+----------------------------------------------
+Changing file permissions
+	chmod u=rwx g=rwx o=rwx
+	chmod a+rwx
+	chmod a-rwx
+----------------------------------------------
+Defining shell in script
+	#!/bin/bash
+----------------------------------------------
+Commenting in script
+	# Purpose:
+	# Date: 
+	# Modification:
+	# Note:
+----------------------------------------------
+uname -a
+----------------------------------------------
+apt list --installed
+----------------------------------------------
+Create a file with time stamp
+	touch -d "Thu, 1 March 2018 12:30:00" historical.txt
+----------------------------------------------
+Finding files with timestamp
+	find <location> -mtime +90 -exec ls -l {} \;
+----------------------------------------------
+su -
+----------------------------------------------
+tar cvf /root/backp.tar /root/scripts
+----------------------------------------------
+tar tvf /root/backp.tar
+----------------------------------------------
+gzip /root/backp.tar
+----------------------------------------------
+hostname --fqdn
+dnsdomainname
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

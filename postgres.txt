@@ -1,0 +1,112 @@
+Maximum Database size Unlimited
+Maximum Table size 32TB
+Maximum  Row Size 1.6 TB
+Maximum Field Size 1 GB
+Maximum rows per Table Unlimited
+Maximum Columns per table 250-1600
+maximum indexes per tables Unlimited
+-------------------------------------------
+Table or Index  	-  Relation
+Row  			-  Tuple
+Column			-  Attribute
+Data Block		-  Page (When block is on disk)
+Page 			-  Buffer (When block is in memory)
+------------------------------------------- 
+shell
+	ps -ef | grep postmaster:
+------------------------------------------- 
+Background processes:
+	Backgroound Writer
+	WAL writer
+	Checkpointer
+	Autovacum Launcher
+	Autovacum workers
+	Logging collector
+	Stats Collector
+	Archiver
+	Logical replication launcher
+	DBms_aq Launcher
+------------------------------------------- 
+Master process
+	Postmaster tcp port 5444 in Oracle dialect 5432 in postgres dialect
+------------------------------------------- 
+Configuration file
+	pg_hp.con
+-------------------------------------------
+\du - list users
+\db - list table spaces
+\list or \l - list databases
+\c <dbname> or \connect <dbname> - connect database
+\dt+ or \dt or \d+ or \d - list tables
+\d+ <tablename> - describe table
+show port;
+show data_directory;
+select datname from pg_database
+select datname, oid from pg_database
+select pg_relation_filepath('<tablename>');
+-------------------------------------------
+Commit and Checkpoint
+	Before Commint
+	After commit
+	After Checkpoint
+-------------------------------------------
+SQL Engine
+	Parser
+	Optiimizer
+	Execute
+-------------------------------------------
+Cluster
+	Collection of Databases
+	Single postgres instance
+-------------------------------------------
+Installation Directory Layout
+	Default Location
+		Linux: /usr/edb/as13
+		Windows: C:\Program Files\edb\as13
+	bin -programs
+	share -shared data
+	include -header files
+	lib or lib64	-libray files
+-------------------------------------------
+Page Structure
+	Page Header
+	Tuple
+	Special
+	Item
+
+Page size - 8k
+-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+	
+	

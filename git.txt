@@ -1,0 +1,114 @@
+Version Control System (VCS) Apps 
+	Subversion
+	Perforce
+	AWS Code Summit
+	Mercurial
+	Git 2007
+---------------------------------------------------
+Types
+	Centralized version control system - CVCS
+	Distributed version contol system -  DVCS
+---------------------------------------------------
+Development Environments
+	UAT
+	QA	
+	Staging
+	Production
+---------------------------------------------------
+Unix Comamnds
+	Commands
+	Helper Instructions (Flags)
+---------------------------------------------------
+grep - Global regular expression, allows for searching contents of files or folders
+---------------------------------------------------
+0 No permission ---
+1 Execute permission --x
+2 Write permission -w-
+3 Execute (1) and write (2) permission = 3 -wx
+4 Read permission r--
+5 Read and execute permission 4 (read) + 1 (excute) = 5 r-x
+6 Read and write permission 4 (read) + 2 (write) = 6 rw-
+7 All permissions 4 (read) + 2 (write) + 1 (execute) = 7 rwx
+---------------------------------------------------
+Permission numbers
+	EWR = 7 (1+2+4)
+	E = Execute 1
+	W = Write 2
+	R = Read 4
+---------------------------------------------------
+Word Count
+	wc <filename> -w
+	cat <filename> | wc -w
+	cat <filename> <filename> | wc -w
+---------------------------------------------------
+File Count
+	ls | wc -w
+---------------------------------------------------
+Redirection
+	Input/Output Redirection
+		Standard Input - 0
+		Standard Output - 1
+		standarda Error - 2
+---------------------------------------------------
+Standard Input Redirection
+	< 
+	>
+	ex: cat > input.txt
+	Type the text here
+	press <ctrl> <d>
+---------------------------------------------------
+Standard Error Redirection
+	2>  - a file
+	2>&1 - a file and screen
+	ex: ls -l /bin/potatao 2> alex.txt
+---------------------------------------------------
+GREP - Global Regular Expression Print
+	grep <search key> <filename>
+	ex: grep alex names.txt
+
+	Searches are case sensitive
+	ex: grep alex names.txt
+	ex: grep Alex names.txt
+
+	flag for turn off case sensitivity -i
+	ex: grep -i alex names.txt
+
+	flag for exact matches -w
+	ex: grep -w alex names.txt
+
+	searching inside a group of folders
+	ex: ls /bin | grep zip
+---------------------------------------------------
+Github coursera token
+	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
+---------------------------------------------------
+Generate SSH Key Pair
+	ssh-keygen -t ed25519 -C alexmnetto@outlook.com
+---------------------------------------------------
+Git Commands
+	git clone https://github.com/amngithub/meta-data-engineer.git
+---------------------------------------------------
+git init
+git add <filename>              - stages the file
+git restore --stage <filename>  - unstages the file 
+git commit -m "" <filename>     - commit the files to local branch
+git status
+git branch
+git checkout				   - creates a new branch				
+git checkout -B 'feature/lesson' - create a new branch move to it
+git push -u origin <branch name>
+git remote
+git remote -v
+git remote add origin <url>
+git push origin main 
+cd .git 						finding the current head
+cat head
+cat /refs/heads/main
+git commit -m "first commit"
+git push -u origin main
+git add ./
+git diff
+git blame <filename>
+git blame -l <filename>
+git blame -L 5, 15 <filename>
+git log
