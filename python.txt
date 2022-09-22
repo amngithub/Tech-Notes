@@ -1,0 +1,168 @@
+Programming paradigms
+	procedural
+	functional
+	object oriented
+	declarative
+	logic
+	Event-driven
+	flow-driven
+---------------------------------------------
+DRY
+	Don't
+	Repeat
+	Yourself
+---------------------------------------------
+refactoring
+	Code is measured by time and memory space
+	Big O notation
+		Horible
+		Bad
+		Fair
+		Good
+		Excellent
+---------------------------------------------
+Type Casting
+	Implicit
+	Explicit
+	
+		str()
+		int()
+		float()
+		ord()
+		hex()
+		oct()
+		tuple()
+		set()
+		list()
+		dict()
+---------------------------------------------
+IO
+	input()
+	print()
+---------------------------------------------
+Math and logical operators
+	Addition +
+	Substract	-
+	Multiply	*
+	Division /
+	Modulo %
+	
+	and
+	or - |
+	not
+---------------------------------------------
+https://www.hackerrank.com/domains/python
+---------------------------------------------
+Control Flows
+	Conditional:
+		If
+		else
+		else if/elif
+	Loops
+		for loop
+		while loop
+---------------------------------------------
+Match Statement
+	match <scneario>:
+		case <condition1> | <condition2>:
+			print("What you want")
+		case <condition3> | <condition4>:
+			print("What you want")
+		case _:
+			print("unknown")
+---------------------------------------------
+Switch Statement
+---------------------------------------------
+For Loop
+	for <iterator> in <variable>:
+		<output>
+---------------------------------------------
+While Loop
+
+	variable = <value>
+	while <varaiable> <condition>:
+		<action>
+---------------------------------------------
+Nested Loop
+---------------------------------------------
+import time
+start_time = time.time()
+print(round(time.time() - start_time), 2))
+---------------------------------------------
+function
+	A function is a modular piece of code that can be used repeatedly
+---------------------------------------------
+Variable Scope - LEGB
+	local
+	Enclosing
+	Global
+	Built-in
+---------------------------------------------
+args
+	def <function name>(*args):
+		action
+---------------------------------------------
+kwargs
+	def <function name>(**kwargs):
+		action
+---------------------------------------------
+try and except
+	try:
+	except Exception as e:
+
+	try:
+		my custom function
+	except Exception as e:
+		print("my cstom error message", e)
+		print(e.__class__)
+---------------------------------------------
+FIle handling
+	Open
+	Close
+
+	Actions
+		Reading
+		Wiriting
+		Creating
+	Output
+		Text
+		Binary
+	Modes
+		r 		- open and read in text format
+		rb		- open and read in binary format
+		r+		- open for reading and writing
+		w 		- open for writing
+		a 		- open for editing or appending
+		close()	- closing the file connection
+		with open - 
+---------------------------------------------
+Creating a files
+	with open('snowflake.txt', mode = 'w') as file:
+	
+	Add
+	with open('snowflake.txt'), 'w') as file:
+		file.write("File text content")
+	Append
+	with open('snowflake.txt'), 'a') as file:
+		file.write("File text content")
+
+---------------------------------------------
+Read a file
+	read()
+	readline()
+	readlines()
+---------------------------------------------
+Algoritham
+---------------------------------------------
+Recursion
+	
+---------------------------------------------
+Slicing
+	[::-1]
+	
+---------------------------------------------
+OOP
+	Classes
+	Objects
+	Methods
+---------------------------------------------

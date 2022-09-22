@@ -1,0 +1,2 @@
+systemctl status mssql-server --no-pager
+
