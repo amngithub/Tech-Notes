@@ -2,4 +2,212 @@
 # Three main types of users - Super User, System User , Regular User
 # Super User is "root" with UID 0
 
+[root@ALXDL mgss]# id
+uid=0(root) gid=0(root) groups=0(root)
+
+[oracle@ALXDL ~]$ id root
+uid=0(root) gid=0(root) groups=0(root)
+
+[oracle@ALXDL ~]$ id
+uid=1000(oracle) gid=1000(oracle) groups=1000(oracle),4(adm),10(wheel),11(cdrom)
+
+[oracle@ALXDL ~]$ ls -ld dir1/
+drwxr-xr-x 2 oracle oracle 4096 Oct 19 21:56 dir1/
+
+[oracle@ALXDL dir1]$ ls -l file1.txt
+-rw-r--r-- 1 oracle oracle 5 Oct 19 21:55 file1.txt
+
+[oracle@ALXDL ~]$ cat /etc/passwd
+#use sbin/nologin to deny remote access.
+setroubleshoot:x:995:992:SELinux troubleshoot server:/var/lib/setroubleshoot:/sbin/nologin
+
+[oracle@ALXDL ~]$ cat /etc/group
+
+[oracle@ALXDL ~]$ ps -au
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         9  0.0  0.1   7356  4244 pts/0    Ss   21:42   0:00 -bash
+root        27  4.0  3.6 383040 144992 pts/0   S+   21:42   0:39 /usr/bin/
+root        47  0.0  0.1   7356  4092 pts/1    Ss   21:51   0:00 -bash
+root        66  0.0  0.1  15236  6308 pts/1    S    21:52   0:00 su oracle
+oracle      67  0.0  0.1   7460  4180 pts/1    S    21:52   0:00 bash
+root       415  0.0  0.0   7092  3340 pts/0    S+   21:58   0:00 /bin/sh /
+root       416  3.4  1.6  68784 65548 pts/0    D+   21:58   0:00 update-mi
+oracle     417  0.0  0.0  10068  3596 pts/1    R+   21:58   0:00 ps -au
+
+[oracle@ALXDL ~]$ whoami
+oracle
+
+[oracle@ALXDL ~]$ su -
+Password:
+Last login: Tue Oct 17 00:39:02 IST 2023 on pts/0
+Last failed login: Thu Oct 19 22:15:46 IST 2023 on pts/1
+There was 1 failed login attempt since the last successful login.
+[root@ALXDL ~]#
+
+[oracle@ALXDL ~]$ visudo
+visudo: /etc/sudoers: Permission denie
+
+[oracle@ALXDL ~]$ echo $HOME
+/home/oracle
+
+[oracle@ALXDL ~]$ echo $PATH
+/home/oracle/.local/bin:/home/oracle/bin:/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+
+[oracle@ALXDL ~]$ sudo su
+[sudo] password for oracle:
+[root@ALXDL oracle]# id
+uid=0(root) gid=0(root) groups=0(root)
+[root@ALXDL oracle]# pwd
+/home/oracle
+[root@ALXDL oracle]# echo $HOME
+/root
+[root@ALXDL oracle]# echo $PATH
+/root/.local/bin:/root/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+#Add users
+[root@ALXDL oracle]# useradd --help
+Usage: useradd [options] LOGIN
+       useradd -D
+       useradd -D [options]
+
+Options:
+      --badname                 do not check for bad names
+  -b, --base-dir BASE_DIR       base directory for the home directory of the
+                                new account
+      --btrfs-subvolume-home    use BTRFS subvolume for home directory
+  -c, --comment COMMENT         GECOS field of the new account
+  -d, --home-dir HOME_DIR       home directory of the new account
+  -D, --defaults                print or change default useradd configuration
+  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+  -f, --inactive INACTIVE       password inactivity period of the new account
+  -g, --gid GROUP               name or ID of the primary group of the new
+                                account
+  -G, --groups GROUPS           list of supplementary groups of the new
+                                account
+  -h, --help                    display this help message and exit
+  -k, --skel SKEL_DIR           use this alternative skeleton directory
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -l, --no-log-init             do not add the user to the lastlog and
+                                faillog databases
+  -m, --create-home             create the user's home directory
+  -M, --no-create-home          do not create the user's home directory
+  -N, --no-user-group           do not create a group with the same name as
+                                the user
+  -o, --non-unique              allow to create users with duplicate
+                                (non-unique) UID
+  -p, --password PASSWORD       encrypted password of the new account
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             login shell of the new account
+  -u, --uid UID                 user ID of the new account
+  -U, --user-group              create a group with the same name as the user
+  -Z, --selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping
+
+[root@ALXDL oracle]# usermod --help
+Usage: usermod [options] LOGIN
+
+Options:
+  -b, --badname                 allow bad names
+  -c, --comment COMMENT         new value of the GECOS field
+  -d, --home HOME_DIR           new home directory for the user account
+  -e, --expiredate EXPIRE_DATE  set account expiration date to EXPIRE_DATE
+  -f, --inactive INACTIVE       set password inactive after expiration
+                                to INACTIVE
+  -g, --gid GROUP               force use GROUP as new primary group
+  -G, --groups GROUPS           new list of supplementary GROUPS
+  -a, --append                  append the user to the supplemental GROUPS
+                                mentioned by the -G option without removing
+                                the user from other groups
+  -h, --help                    display this help message and exit
+  -l, --login NEW_LOGIN         new value of the login name
+  -L, --lock                    lock the user account
+  -m, --move-home               move contents of the home directory to the
+                                new location (use only with -d)
+  -o, --non-unique              allow using duplicate (non-unique) UID
+  -p, --password PASSWORD       use encrypted password for the new password
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -s, --shell SHELL             new login shell for the user account
+  -u, --uid UID                 new UID for the user account
+  -U, --unlock                  unlock the user account
+  -v, --add-subuids FIRST-LAST  add range of subordinate uids
+  -V, --del-subuids FIRST-LAST  remove range of subordinate uids
+  -w, --add-subgids FIRST-LAST  add range of subordinate gids
+  -W, --del-subgids FIRST-LAST  remove range of subordinate gids
+  -Z, --selinux-user SEUSER     new SELinux user mapping for the user account
+
+[root@ALXDL oracle]# userdel --help
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@ALXDL ~]# useradd juliet
+[root@ALXDL ~]# tail -n 2 /etc/passwd
+setroubleshoot:x:995:992:SELinux troubleshoot server:/var/lib/setroubleshoot:/sbin/nologin
+juliet:x:1001:1001::/home/juliet:/bin/bash
+
+# Add groups
+
+[root@ALXDL ~]# groupadd --help
+Usage: groupadd [options] GROUP
+
+Options:
+  -f, --force                   exit successfully if the group already exists,
+                                and cancel -g if the GID is already used
+  -g, --gid GID                 use GID for the new group
+  -h, --help                    display this help message and exit
+  -K, --key KEY=VALUE           override /etc/login.defs defaults
+  -o, --non-unique              allow to create groups with duplicate
+                                (non-unique) GID
+  -p, --password PASSWORD       use this encrypted password for the new group
+  -r, --system                  create a system account
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DI        directory prefix
+  -U, --users USERS             list of user members of this group
+
+[root@ALXDL ~]# groupmod --help
+Usage: groupmod [options] GROUP
+
+Options:
+  -a, --append                  append the users mentioned by -U option to the group
+                                without removing existing user members
+  -g, --gid GID                 change the group ID to GID
+  -h, --help                    display this help message and exit
+  -n, --new-name NEW_GROUP      change the name to NEW_GROUP
+  -o, --non-unique              allow to use a duplicate (non-unique) GID
+  -p, --password PASSWORD       change the password to this (encrypted)
+                                PASSWORD
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -U, --users USERS             list of user members of this group
+
+[root@ALXDL ~]# groupdel --help
+Usage: groupdel [options] GROUP
+
+Options:
+  -h, --help                    display this help message and exit
+  -R, --root CHROOT_DIR         directory to chroot into
+  -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
+  -f, --force                   delete group even if it is the primary group of a user
+
+[root@ALXDL ~]# groupadd -g 30000 shakespear
+[root@ALXDL ~]# tail -n 1 /etc/group
+shakespear:x:30000:
+
+[root@ALXDL ~]# groupadd artists
+[root@ALXDL ~]# tail -n 1 /etc/group
+artists:x:30001:
+
+[root@ALXDL ~]# usermod -G shakespear juliet
+[root@ALXDL ~]# id juliet
+uid=1001(juliet) gid=1001(juliet) groups=1001(juliet),30000(shakespear)
 
