@@ -1,1 +1,5 @@
-# Managing file system permissions
+# Managing users
+# Three main types of users - Super User, System User , Regular User
+# Super User is "root" with UID 0
+
+
