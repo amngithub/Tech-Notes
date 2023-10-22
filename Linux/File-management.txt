@@ -1,1 +1,14 @@
-
+[root@ALXDL ~]# chmod --help
+[root@ALXDL ~]# chmod go-rw test.txt
+[root@ALXDL ~]# chmod a+x test.txt
+[root@ALXDL ~]# ls -la
+[root@ALXDL ~]# chown oracle test.txt
+[root@ALXDL ~]# ls -la
+[root@ALXDL ~]# chown --help
+[root@ALXDL ~]# chgrp --help
+[root@ALXDL ~]# u+s
+[root@ALXDL ~]# g+s
+[root@ALXDL ~]# o+t
+[root@ALXDL ~]# umask
+[root@ALXDL ~]# mkdir /tmp/shared
+[root@ALXDL ~]# ll /tmp/shared
