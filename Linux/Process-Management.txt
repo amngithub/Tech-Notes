@@ -1,2 +1,11 @@
 [root@ALXDL mgss]# sleep 10000 &
 [root@ALXDL mgss]# jobs
+[root@ALXDL mgss]# fg %1
+[root@ALXDL mgss]# ps j
+[root@ALXDL mgss]# bg %1
+[root@ALXDL bin]# ps jT
+[root@ALXDL ~]# w
+[root@ALXDL ~]# kill -SIGSTOP %6
+[root@ALXDL ~]# kill -SIGTERM %6
+[root@ALXDL ~]# uptime
+[root@ALXDL ~]# lscpu
