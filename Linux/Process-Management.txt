@@ -1,1 +1,2 @@
-
+[root@ALXDL mgss]# sleep 10000 &
+[root@ALXDL mgss]# jobs
